@@ -1,0 +1,57 @@
+{% load static %}
+
+<!DOCTYPE HTML>
+<html>
+
+  {% load django_bootstrap5 %}
+  {% bootstrap_css %} 
+  {% bootstrap_javascript %} 
+  {% bootstrap_messages %}
+  <title>Movie Booking</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+
+  <head>
+    <meta charset=""UTF-8">
+    <meta name="viewport" content="width=device-width, intial-scale=1">
+     <link rel="stylesheet" href="{% static 'index.css' %}?v={{ version }}" />
+    <script src="TBD.js"></script>
+  </head>
+
+  <body>
+      <div class="container-fluid">
+          <!-- Navbar -->
+          <nav class="navbar navbar-expand-lg pg-body-tertiary">
+              <img src="{% static 'images/movie-icon-png-4.jpg' %}"  style="width:64px;height:64px;">
+              <h1 style="font-family:'Lucida Handwriting', cursive; color: #e0ac10""> Movie Booking</h1>
+              <div class="container-fluid">
+                  <button class="navbar-toggler" type="button" data-bs-toggle="collapse" 
+                          data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" 
+                          aria-expanded="false" aria-label="Toggle navigation">
+                      <span class="navbar-toggler-icon"></span>
+                  </button>
+                  <div class="collapse navbar-collapse">
+                      <div class="navbar-nav">
+                          <!-- {% url 'movie_list' %} is defined in URL path to dynamically create -->
+                          <a class="nav-link active" style="color: #ede4ca"; href="{% url 'movie_list' %}">Movies</a>
+                          <a class="nav-link active" style="color: #ede4ca"; href="{% url 'book_history' %}">Booking History</a>
+
+                      </div>
+                  </div>
+              </div>
+          </nav>
+          
+        <div class="col-sm-10">
+          <!-- add block content from html template -->
+         {% block content %}
+         {% endblock %}
+        </div>
+      </div>
+  </body>
+
+<!-- Footer for credits! -->
+  <footer>
+    <p>Developed By: Camilla L</p>
+    <p>Developed For: CS4300/5300 - Advanced Software Engineering</p> 
+  </footer>
+
+</html>

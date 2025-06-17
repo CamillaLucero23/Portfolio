@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+
+{% block title %}Booking History{% endblock %}
+{% block content %}
+<h1>Booking History</h1>
+<ul class="list-group">
+
+    {% if bookings %}
+        {% for booking in bookings %}
+            <li class="list-group-item" style="background-color: #ede4ca">
+                <h5>{{ booking.user.name }} - Date Booked: {{ booking.booking_date }}</h5>
+                <p>{{ booking.movie.title }}: Seat {{ booking.seat.seat_number }}</p>
+            </li>
+        {% endfor %}   
+        
+    {% else %}
+        <li class="list-group-item" style="background-color: #ede4ca">
+            <h5>There is no users who booked a seat.</h5> 
+        </li>
+    {% endif %}
+</ul>
+{% endblock %}

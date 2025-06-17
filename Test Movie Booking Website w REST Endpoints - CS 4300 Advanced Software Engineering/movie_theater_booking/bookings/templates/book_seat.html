@@ -1,0 +1,41 @@
+{% extends 'base.html' %}
+{% load rest_framework %}
+
+{% block title %}book seats{% endblock %}
+{% block content %}
+
+<!-- Display error message if it exists (Will only occur after POST request) -->
+{% if error %}
+<div class="alert alert-danger text-center">{{ error }}</div>
+{% endif %}
+
+<h2>Available Seats - {{ movie.title }}</h2>
+<ul class="list-group">
+    {% for seat in seats %}
+        
+            <li class="list-group-item" size="" style="background-color: #ede4ca">
+                <h5 class="text-center">Seat: {{ seat.seat_number }}</h5> <!-- Center seat numbers -->
+            
+                <form method="POST" style="color: #2f2e4a" action="{% url 'book_seat' movie.id %}">
+                    {% csrf_token %}
+
+                    <input type="hidden" name="seat_number" value="{{ seat.seat_number }}">
+
+                    <!-- User selection dropdown -->
+                    <div class="form-group">
+                        <label for="user-select" style="color: #2f2e4a">Select User:</label>
+                        <select id="user_name" name="user_name" class="form-control" required>
+                            <option value="" disabled selected>Choose a user</option>
+                            {% for user in users %}
+                                <option style="color: #2f2e4a" value="{{ user.name }}">{{ user.name }}</option>
+                            {% endfor %}
+                        </select>
+                    </div>
+
+                    <button type="submit" class="btn btn-primary" style="width: 100%; background-color: #e0ac10;border-color: #ede4ca;">Book Seat</button> <!-- Full width button -->
+                </form>
+            </li> 
+        
+    {% endfor %}
+</ul>
+{% endblock %}

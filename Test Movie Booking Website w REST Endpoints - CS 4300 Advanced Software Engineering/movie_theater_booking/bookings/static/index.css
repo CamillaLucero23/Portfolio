@@ -1,0 +1,60 @@
+body {
+    font-family: 'Veranda', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #2f2e4a;
+    color: #ede4ca;
+    line-height: 1.6;
+}
+
+header {
+    background-color: #2f2e4a;
+    padding: 1rem;
+    color: rgb(0, 0, 0);
+}
+
+footer {
+    background-color: #e0ac10;
+    color: white;
+    text-align: center;
+    padding: 20px;
+    margin-top: 10px;
+}
+
+#siteLogo img {
+    width: 100px;
+    height: auto;
+}
+
+#headerImage img {
+    width: 100px;
+    height: auto;
+    margin-left: 20px;
+}
+
+button {
+    padding: 6px 15px;
+    background-color: #392fbe; 
+    color: white; 
+    border: none;
+    border-radius: 5px; 
+    cursor: pointer; 
+}
+
+button:hover {
+    background-color: #4586a0; 
+}
+
+#headerHP {
+    display: flex;
+    flex-direction: column;
+    align-items: right;
+}
+
+input, select {
+    width: 20%; 
+    padding: 8px;
+    margin-bottom: 10px;
+    border: 1px solid #000000; 
+    border-radius: 5px; 
+}

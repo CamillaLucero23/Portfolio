@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html  lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link href="style.css" rel="stylesheet">
+	<script src="https://cdn.jsdelivr.net/npm/quill@2.0.3/dist/quill.js"></script>
+	<link href="https://cdn.jsdelivr.net/npm/quill@2.0.3/dist/quill.snow.css" rel="stylesheet">
+ 
+    <title>Inkscribe-Home</title>
+</head>
+<body>
+
+    <!-- Navigation bar -->
+    <nav class="navbar">
+		<ul>
+			<li><a href="homepage.html">Home</a></li>
+			<li><a href="notepad.html">Notepad</a></li>
+			<li><a href="tips.html">Tips</a></li>
+			<li style="float:right"><a href="page_login.html">Login</a></li>
+			<li style="float:right"><a href="page_register.html">Register</a></li>
+		</ul>
+    </nav>
+	
+	<p></p>
+	<div class="mainSection">
+		<div class="titleName">InkScribe NotePad</div>
+        <p class="titlePara">
+            Welcome to InkScribe, the best place to make all your notes and ToDo lists!
+        </p>
+		<!--<textarea rows="2" cols="200" style="width:50%;" id="noteInput" placeholder="Enter your note here"></textarea>-->
+
+		<!-- Create the editor container -->
+		<div class="quickNoteContainer">
+			<div id="noteInput"></div>
+			<div>
+				<p></p>
+				<button class="button button4"> Quick Notes </button>
+				<p></p>
+				<button class="button button4"> School </button>
+				<p></p>
+				<button class="button button4"> Work </button>
+				<p></p>
+				<button class="button button4"> Home </button>
+				<p></p>
+				<button class="button button4"> Other </button>
+				<p></p>
+			</div>
+		</div>
+
+        <div class="ButtonsSelect">
+            <button class="button button4" id="saveNoteButton">Save Quick Note</button>
+			<button class="button button4" id="goToNotes" >Quick Notes</button>
+			<button class="button button4" id="goToNotes" >Share Note</button>
+        </div>
+	</div>
+
+<!-- Include the Quill library -->
+	<script src="https://cdn.jsdelivr.net/npm/quill@2.0.3/dist/quill.js"></script>
+    <script src="index.js"></script>
+
+</body>
+</html>
